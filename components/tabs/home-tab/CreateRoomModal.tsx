@@ -16,7 +16,9 @@ import {
 } from "@mui/material";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import {
-    VideoIcon
+    VideoIcon,
+    HandEmojiIcon,
+    TimeIcon
 
 } from "../../CustomIcons";
 
@@ -61,6 +63,9 @@ const useStyles = makeStyles({
     createRoomButton:{
         fontWeight:"bold",
         textTransform:"capitalize"
+    },
+    borderStyle:{
+        borderColor:"#ffffff"
     }
 })
 export default function TransitionsModal() {
@@ -94,9 +99,9 @@ export default function TransitionsModal() {
                     }}
                     >
                         <Box
+                        className={classes.borderStyle}
                         sx ={{
                             borderRadius:"50%",
-                            borderColor:"#ffffff",
                             border:1,
                             display:"inline-block"
                         }}
@@ -121,44 +126,58 @@ export default function TransitionsModal() {
                             size = "large"
                             variant = "contained"
                             >
-                            <Box
-                            
-                            sx = {{
-                                display:"flex",
-                                justifyContent:"space-between", alignItems:"center",
-                                width:"100%"
-                            }}
-                            >
+                                <Box
+                                
+                                sx = {{
+                                    display:"flex",
+                                    justifyContent:"space-between", alignItems:"center",
+                                    width:"100%"
+                                }}
+                                >
+                                    <Stack direction = "row" spacing = {2}>
+                                        <HandEmojiIcon width = {40} height = {40}/>
                                         <Stack direction = "column">
-                                            &#U+1F44B;
                                             <Typography>
-                                                Room name
-                                            </Typography>
+                                                Room name </Typography>
                                             <Typography 
                                             className = {classes.buttonSubtitle}>
                                                 Ashish room 
                                             </Typography>
                                         </Stack>
-                                        <ArrowForwardIosIcon/>
+                                    </Stack>
+                                    <ArrowForwardIosIcon/>
                                 </Box>
                            </Button>
 
                             <Button 
                             className = {classes.buttonStyle}
                             size = "large"
-                            endIcon = {<ArrowForwardIosIcon/>}
                             variant = "contained"
                             >
-                                <Stack direction = "column">
-                                    <Typography>
-                                        Start Time
-                                    </Typography>
-                                    <Typography 
-                                    className = {classes.buttonSubtitle}>
-                                        Now
-                                    </Typography>
-                                </Stack>
-                            </Button>
+                                <Box
+                                
+                                sx = {{
+                                    display:"flex",
+                                    justifyContent:"space-between", alignItems:"center",
+                                    width:"100%"
+                                }}
+                                >
+                                    <Stack direction = "row" spacing = {2}>
+                                        <TimeIcon width = {40} height = {40}/>
+                                        <Stack direction = "column">
+                                            <Typography>
+                                                Start Time </Typography>
+
+                                            <Typography 
+                                            className = {classes.buttonSubtitle}>
+                                                Now
+                                            </Typography>
+                                        </Stack>
+                                    </Stack>
+                                    <ArrowForwardIosIcon/>
+                                </Box>
+                           </Button>
+
                         </Stack>
                     </Box>
                     <Typography className = {classes.buttonSubtitle}> The room is not visible until you invite people after you have created it.
