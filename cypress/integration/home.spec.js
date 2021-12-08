@@ -1,5 +1,9 @@
 describe("home page testing",()=>{
     it("contains content",()=>{
-        cy.visit("/")
+        cy.visit("/");
     })
+    it("contains headline",()=>{
+        cy.visit("/");
+    })
+
 })
